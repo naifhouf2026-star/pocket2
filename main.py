@@ -10,43 +10,36 @@ class Colors:
 
 app = FastAPI()
 
-SSID = '42["auth",{"session":"bdvqmtpp956s542a6jjimulvc9","isDemo":1,"uid":62045610,"platform":2,"isFastHistory":true,"isOptimized":true}]'
+SSID = '42["auth",{"session":"c6v74skiu8l58ls0k2iesll1fa","isDemo":1,"uid":71923919,"platform":2}]'
 
 # الفريمات المدعومة (بالدقايق)، السيرفر هيجلب بياناتها كلها
 SUPPORTED_TIMEFRAMES = [1, 5, 15] 
 HISTORY_COUNT = 300
 ASSETS_TO_STREAM = [
-    "100GBP", "100GBP_otc", "#AAPL", "#AAPL_otc", "#AXP", "#AXP_otc", "#BA", 
-    "#BA_otc", "#CSCO", "#CSCO_otc", "#FB", "#FB_otc", "#INTC", "#INTC_otc", 
-    "#JNJ", "#JNJ_otc", "#JPM", "#MCD", "#MCD_otc", "#MSFT", "#MSFT_otc", 
-    "#PFE", "#PFE_otc", "#TSLA", "#TSLA_otc", "#XOM", "#XOM_otc", "ADA-USD_otc", 
-    "AEDCNY_otc", "AEX25", "AMD_otc", "AMZN_otc", "AUDCAD", "AUDCAD_otc", 
-    "AUDCHF", "AUDCHF_otc", "AUDJPY", "AUDJPY_otc", "AUDNZD_otc", "AUDUSD", 
-    "AUDUSD_otc", "AUS200", "AUS200_otc", "AVAX_otc", "BABA", "BABA_otc", 
-    "BCHEUR", "BCHGBP", "BCHJPY", "BHDCNY_otc", "BITB_otc", "BNB-USD_otc", 
-    "BTCGBP", "BTCJPY", "BTCUSD", "BTCUSD_otc", "CAC40", "CADCHF", "CADCHF_otc", 
-    "CADJPY", "CADJPY_otc", "CHFJPY", "CHFJPY_otc", "CHFNOK_otc", "CITI", 
-    "CITI_otc", "COIN_otc", "D30EUR", "D30EUR_otc", "DASH_USD", "DJI30", 
-    "DJI30_otc", "DOGE_otc", "DOTUSD_otc", "E35EUR", "E35EUR_otc", "E50EUR", 
-    "E50EUR_otc", "ETHUSD", "ETHUSD_otc", "EURAUD", "EURAUD_otc", "EURCAD", 
-    "EURCAD_otc", "EURCHF", "EURCHF_otc", "EURGBP", "EURGBP_otc", "EURHUF_otc", 
-    "EURJPY", "EURJPY_otc", "EURNZD_otc", "EURRUB_otc", "EURTRY_otc", "EURUSD", 
-    "EURUSD_otc", "F40EUR", "F40EUR_otc", "FDX_otc", "GBPAUD", "GBPAUD_otc", 
-    "GBPCAD", "GBPCAD_otc", "GBPCHF", "GBPCHF_otc", "GBPJPY", "GBPJPY_otc", 
-    "GBPNZD_otc", "GBPUSD", "GBPUSD_otc", "GME_otc", "H33HKD", "IRRUSD_otc", 
-    "JODCNY_otc", "JPN225", "JPN225_otc", "KESUSD_otc", "LBPUSD_otc", "LINK_otc", 
-    "LNKUSD", "LTCUSD_otc", "MADUSD_otc", "MARA_otc", "MATIC_otc", "NASUSD", 
-    "NASUSD_otc", "NFLX", "NFLX_otc", "NGNUSD_otc", "NZDJPY_otc", "NZDUSD_otc", 
-    "OMRCNY_otc", "PLTR_otc", "QARCNY_otc", "SARCNY_otc", "SMI20", "SOL-USD_otc", 
-    "SP500", "SP500_otc", "SYPUSD_otc", "TNDUSD_otc", "TON-USD_otc", "TRX-USD_otc", 
-    "UAHUSD_otc", "UKBrent", "UKBrent_otc", "USCrude", "USCrude_otc", "USDARS_otc", 
-    "USDBDT_otc", "USDBRL_otc", "USDCAD", "USDCAD_otc", "USDCHF", "USDCHF_otc", 
-    "USDCLP_otc", "USDCNH_otc", "USDCOP_otc", "USDDZD_otc", "USDEGP_otc", 
-    "USDIDR_otc", "USDINR_otc", "USDJPY", "USDJPY_otc", "USDMXN_otc", "USDMYR_otc", 
-    "USDPHP_otc", "USDPKR_otc", "USDRUB_otc", "USDSGD_otc", "USDTHB_otc", 
-    "USDVND_otc", "VISA_otc", "VIX_otc", "XAGEUR", "XAGUSD", "XAGUSD_otc", 
-    "XAUEUR", "XAUUSD", "XAUUSD_otc", "XNGUSD", "XNGUSD_otc", "XPDUSD", 
-    "XPDUSD_otc", "XPTUSD", "XPTUSD_otc", "YERUSD_otc", "ZARUSD_otc"
+    "100GBP_otc", "#AAPL_otc", "#AXP_otc", "#BA_otc", "#CSCO_otc", 
+    "#FB_otc", "#INTC_otc", "#JNJ_otc", "#MCD_otc", "#MSFT_otc", 
+    "#PFE_otc", "#TSLA_otc", "#XOM_otc", "ADA-USD_otc", "AEDCNY_otc", 
+    "AMD_otc", "AMZN_otc", "AUDCAD_otc", "AUDCHF_otc", "AUDJPY_otc", 
+    "AUDNZD_otc", "AUDUSD_otc", "AUS200_otc", "AVAX_otc", "BABA_otc", 
+    "BHDCNY_otc", "BITB_otc", "BNB-USD_otc", "BTCUSD_otc", "CADCHF_otc", 
+    "CADJPY_otc", "CHFJPY_otc", "CHFNOK_otc", "CITI_otc", "COIN_otc", 
+    "D30EUR_otc", "DJI30_otc", "DOGE_otc", "DOTUSD_otc", "E35EUR_otc", 
+    "E50EUR_otc", "ETHUSD_otc", "EURAUD_otc", "EURCAD_otc", "EURCHF_otc", 
+    "EURGBP_otc", "EURHUF_otc", "EURJPY_otc", "EURNZD_otc", "EURRUB_otc", 
+    "EURTRY_otc", "EURUSD_otc", "F40EUR_otc", "FDX_otc", "GBPAUD_otc", 
+    "GBPCAD_otc", "GBPCHF_otc", "GBPJPY_otc", "GBPNZD_otc", "GBPUSD_otc", 
+    "GME_otc", "IRRUSD_otc", "JODCNY_otc", "JPN225_otc", "KESUSD_otc", 
+    "LBPUSD_otc", "LINK_otc", "LTCUSD_otc", "MADUSD_otc", "MARA_otc", 
+    "MATIC_otc", "NASUSD_otc", "NFLX_otc", "NGNUSD_otc", "NZDJPY_otc", 
+    "NZDUSD_otc", "OMRCNY_otc", "PLTR_otc", "QARCNY_otc", "SARCNY_otc", 
+    "SOL-USD_otc", "SP500_otc", "SYPUSD_otc", "TNDUSD_otc", "TON-USD_otc", 
+    "TRX-USD_otc", "UAHUSD_otc", "UKBrent_otc", "USCrude_otc", "USDARS_otc", 
+    "USDBDT_otc", "USDBRL_otc", "USDCAD_otc", "USDCHF_otc", "USDCLP_otc", 
+    "USDCNH_otc", "USDCOP_otc", "USDDZD_otc", "USDEGP_otc", "USDIDR_otc", 
+    "USDINR_otc", "USDJPY_otc", "USDMXN_otc", "USDMYR_otc", "USDPHP_otc", 
+    "USDPKR_otc", "USDRUB_otc", "USDSGD_otc", "USDTHB_otc", "USDVND_otc", 
+    "VISA_otc", "VIX_otc", "XAGUSD_otc", "XAUUSD_otc", "XNGUSD_otc", 
+    "XPDUSD_otc", "XPTUSD_otc", "YERUSD_otc", "ZARUSD_otc"
 ]
 
 # قاموس لتخزين الشموع بناءً على الفريم
