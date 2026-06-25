@@ -15,7 +15,14 @@ SSID = '42["auth",{"session":"bdvqmtpp956s542a6jjimulvc9","isDemo":1,"uid":62045
 # الفريمات المدعومة (بالدقايق)، السيرفر هيجلب بياناتها كلها
 SUPPORTED_TIMEFRAMES = [1, 5, 15] 
 HISTORY_COUNT = 300
-ASSETS_TO_STREAM = ["AUDCAD_otc", "AUDCHF_otc", "AUDJPY_otc", "AUDNZD_otc", "AUDUSD_otc"]
+ASSETS_TO_STREAM = [
+    "AUDCAD_otc", "AUDCHF_otc", "AUDJPY_otc", "AUDNZD_otc", "AUDUSD_otc",
+    "CADJPY_otc", "CADCHF_otc", "CHFJPY_otc", "EURAUD_otc", "EURCAD_otc",
+    "EURCHF_otc", "EURGBP_otc", "EURJPY_otc", "EURNZD_otc", "EURUSD_otc",
+    "GBPAUD_otc", "GBPCAD_otc", "GBPCHF_otc", "GBPJPY_otc", "GBPNZD_otc",
+    "GBPUSD_otc", "NZDJPY_otc", "NZDUSD_otc", "USDCAD_otc", "USDCHF_otc",
+    "USDJPY_otc"
+]
 
 # قاموس لتخزين الشموع بناءً على الفريم
 mt4_assets = {tf: {} for tf in SUPPORTED_TIMEFRAMES}
